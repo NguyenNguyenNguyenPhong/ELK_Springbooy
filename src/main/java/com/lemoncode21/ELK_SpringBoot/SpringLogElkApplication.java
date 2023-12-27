@@ -1,4 +1,4 @@
-package com.lemoncode21.springlogelk;
+package com.lemoncode21.ELK_SpringBoot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.lemoncode21.springlogelk;
+package com.lemoncode21.ELK_SpringBoot;
 
 
 import lombok.extern.slf4j.Slf4j;
