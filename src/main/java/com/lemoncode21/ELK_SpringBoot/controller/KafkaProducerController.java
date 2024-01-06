@@ -27,4 +27,9 @@ public class KafkaProducerController {
         log.info("Post Message to kaffka í value " + message);
         kafkaTemplate.send(kafkaTopic, message);
     }
+
+    @PostMapping("/ESP32Cams")
+    public void handlePostRequest(@RequestBody String inputString) {
+        log.info("Hello endpoint is accessed!" +inputString);
+    }
 }
