@@ -1,4 +1,4 @@
-package com.lemoncode21.ELK_SpringBoot.consumer;
+package IOT.ELK_SpringBoot.consumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -7,13 +7,18 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.Base64;
 import java.util.logging.Logger;
 
 @Service
 @Slf4j
 public class KafkaConsumerService {
 
-    private static final String API_URL = "http://192.168.1.111/Test";
+    private static final String API_URL = "http://172.20.10.12/Test";
     private final String kafkaTopic = "Topic_1_Test";
 //    private final Logger logger =(Logger) LoggerFactory.getLogger(KafkaConsumerService.class);
     @KafkaListener(topics = kafkaTopic, groupId = "my-group-id")
@@ -39,4 +44,5 @@ public class KafkaConsumerService {
 
         return result;
     }
+
 }

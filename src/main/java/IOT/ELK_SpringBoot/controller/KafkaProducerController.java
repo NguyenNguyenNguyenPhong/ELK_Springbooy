@@ -1,15 +1,17 @@
-package com.lemoncode21.ELK_SpringBoot.controller;
+package IOT.ELK_SpringBoot.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.Base64;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -32,4 +34,5 @@ public class KafkaProducerController {
     public void handlePostRequest(@RequestBody String inputString) {
         log.info("Hello endpoint is accessed!" +inputString);
     }
+
 }

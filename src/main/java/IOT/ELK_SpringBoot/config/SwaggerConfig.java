@@ -1,4 +1,4 @@
-package com.lemoncode21.ELK_SpringBoot.config;//package com.example.demo.config;
+package IOT.ELK_SpringBoot.config;//package com.example.demo.config;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
