@@ -2,6 +2,7 @@ package IOT.ELK_SpringBoot.consumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.logging.log4j.util.PropertySource;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,13 @@ public class KafkaConsumerService {
     public void listen(ConsumerRecord<String, String> record) {
         // Xử lý thông điệp từ Kafka
         log.info("Consumer message is value "+record.value() );
-        callApiWithParameter(record.value());
+        try {
+            callApiWithParameter(record.value());
+        }catch (Exception e){
+            log.info("Exception "+ e);
+        }
+        log.info("ESP32 Received Message : " + record.value());
+
         System.out.println("Received Message: " + record.value());
     }
 

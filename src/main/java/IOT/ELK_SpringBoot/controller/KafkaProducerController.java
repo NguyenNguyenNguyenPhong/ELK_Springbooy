@@ -26,13 +26,14 @@ public class KafkaProducerController {
     @PostMapping("/send-message")
     public void sendMessage(@RequestBody String message) {
         // Gửi message lên Kafka topic
-        log.info("Post Message to kaffka í value " + message);
+        log.info("Client Post Message to kaffka  value is " + message);
         kafkaTemplate.send(kafkaTopic, message);
+        log.info("Post Message to kaffka Success  value is " + message);
     }
 
     @PostMapping("/ESP32Cams")
     public void handlePostRequest(@RequestBody String inputString) {
-        log.info("Hello endpoint is accessed!" +inputString);
+        log.info("Receive notification from ESP32 valueis " +inputString);
     }
 
 }
