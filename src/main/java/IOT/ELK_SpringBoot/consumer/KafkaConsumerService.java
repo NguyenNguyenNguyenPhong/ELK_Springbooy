@@ -28,12 +28,11 @@ public class KafkaConsumerService {
         log.info("Consumer message is value "+record.value() );
         try {
             callApiWithParameter(record.value());
+            log.info("ESP32 Received Message : " + record.value());
         }catch (Exception e){
             log.info("Exception "+ e);
         }
-        log.info("ESP32 Received Message : " + record.value());
 
-        System.out.println("Received Message: " + record.value());
     }
 
     public String callApiWithParameter(String name) {
